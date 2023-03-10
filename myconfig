@@ -1,4 +1,0 @@
-     1	my home is /root
-     2	my prompt is \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ 
-     3	current directory is 'pwd'
-     4	today is 'date'
