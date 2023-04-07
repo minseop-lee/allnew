@@ -1,4 +1,8 @@
 var axios = require('axios');
+
+const env = require('dotenv').config({ path: "../../.env" });
+
+
 var data = JSON.stringify({
     "collection": "testdb",
     "database": "test",
@@ -16,7 +20,7 @@ var config = {
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Request-Headers': '*',
-        'api-key': 'KIN',
+        'api-key': process.env.ATLAS_API
     },
     data: data
 };
