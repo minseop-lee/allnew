@@ -1,0 +1,63 @@
+body {
+  background-color: #a9a9f5;
+  font-weight: bold;
+  background-image: url("book.jpeg");
+  text-align: center;
+  font-size: 100;
+}
+h1 {
+  color: rgba(161, 86, 86, 0.63);
+  text-align: center;
+  font-size: 100;
+}
+h4 {
+  color: rgba(249, 249, 249, 0.63);
+  text-align: center;
+  font-size: 50;
+}
+hr {
+  border: 5px solid rgb(89, 102, 110);
+  border-style: dashed;
+}
+input {
+  color: rgb(224, 11, 82);
+  font-size: 20px;
+  text-align: center;
+}
+button {
+  color: blue;
+  font-size: 20px;
+  text-align: center;
+}
+a {
+  font-family: monospace;
+  font-size: 30px;
+  color: #ff1493;
+  text-align: center;
+}
+input[type="text"] {
+  background-color: lightblue;
+}
+input[type="password"] {
+  background-color: rgb(101, 30, 54);
+}
+
+div.box {
+  background: rgb(125, 127, 144);
+  border-style: solid;
+  border-color: rgb(72, 66, 60);
+  margin: 80px;
+  border-width: 30px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 60px 300px 0px 60px;
+}
+
+div.box-inner {
+  border-style: solid;
+  border-color: peru;
+  text-align: center;
+  margin: 10;
+  border-width: 1px;
+  padding: 10px;
+}
