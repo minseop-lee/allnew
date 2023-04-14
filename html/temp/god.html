@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>달력 출력</title>
+  </head>
+  <body>
+    <h3>달력 출력하기</h3>
+    <hr />
+    <script>
+      // 사용자로부터 연도와 월을 입력받는다
+      let yearAndMonth = prompt(
+        "출력할 달력의 연도와 월을 입력하세요. (예: 202304)"
+      );
+
+      // 입력받은 연도와 월을 분리한다
+      let year = parseInt(yearAndMonth.substring(0, 4));
+      let month = parseInt(yearAndMonth.substring(4));
+
+      // 입력받은 연도와 월에 해당하는 첫 날짜를 구한다
+      let firstDate = new Date(year, month - 1, 1);
+
+      // 입력받은 연도와 월에 해당하는 마지막 날짜를 구한다
+      let lastDate = new Date(year, month, 0);
+
+      // 해당 월의 시작 요일을 구한다 (0: 일요일, 1: 월요일, ..., 6: 토요일)
+      let startDay = firstDate.getDay();
+
+      // 해당 월의 마지막 날짜를 구한다
+      let endDay = lastDate.getDate();
+
+      // 달력 출력을 위한 HTML 코드를 생성한다
+      let html = "<table>";
+
+      // 달력의 헤더 (연도와 월)
+      html += "<tr><th colspan='7'>" + year + "년 " + month + "월</th></tr>";
+
+      // 달력의 요일명 (일 ~ 토)
+      html +=
+        "<tr><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
+
+      // 달력의 내용
+      let date = 1;
+      for (let i = 0; i < 6; i++) {
+        html += "<tr>";
+        for (let j = 0; j < 7; j++) {
+          if (i === 0 && j < startDay) {
+            html += "<td></td>";
+          } else if (date > endDay) {
+            html += "<td></td>";
+          } else {
+            if (date < 10) {
+              html += "<td>" + "&nbsp;&nbsp;" + date + "</td>";
+            } else {
+              html += "<td>" + date + "</td>";
+            }
+            date++;
+          }
+        }
+        html += "</tr>";
+      }
+
+      html += "</table>";
+
+      // 생성한 HTML 코드를 출력한다
+      document.write(html);
+    </script>
+  </body>
+</html>

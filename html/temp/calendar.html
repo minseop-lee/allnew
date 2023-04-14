@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calendar</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        background-color: #f7f7f7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        border: 1px solid #e5e5e5;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 10px;
+      }
+      h3 {
+        text-align: center;
+      }
+      th {
+        background-color: #555;
+        color: #fff;
+        text-shadow: 1px 1px #000;
+      }
+
+      td {
+        background-color: #fff;
+        color: #666;
+      }
+
+      td:hover {
+        background-color: #f0f0f0;
+      }
+
+      .today {
+        background-color: #e6e6e6;
+        font-weight: bold;
+      }
+
+      .empty {
+        background-color: #f7f7f7;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Calendar</h3>
+    <hr />
+    <script>
+      let input = prompt("원하는 년도와 달을 입력하세요.(예 : 202304)", 202304);
+      const input_year = input.substr(0, 4);
+      const input_month = input.substr(4, 2);
+      var startDay = new Date(input_year + "-" + input_month).getDay();
+      var endDay = new Date(input_year, input_month, 0).getDate();
+    </script>
+    <table id="calendar" align="center" width="400" height="300">
+      <thead>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Thu</th>
+          <th>Wed</th>
+          <th>Thr</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+      </thead>
+      <script>
+        let i = 1;
+        for (i = 1; i <= endDay + startDay; i++) {
+          if (i % 7 == 1) document.write("<tr>");
+          if (i <= startDay) document.write("<td></td>");
+          if (i > startDay) {
+            document.write("<td>");
+            document.write(i - startDay);
+            document.write("</td>");
+          }
+          if (i % 7 == 0) document.write("</tr>");
+        }
+      </script>
+    </table>
+  </body>
+</html>
