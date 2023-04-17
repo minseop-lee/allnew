@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>랜덤 배열 생성 후 최대 값 출력</title>
+  </head>
+  <body>
+    <h3>랜덤 배열 생성 후 최대 값 출력</h3>
+    <hr />
+    <script>
+      let n = 5;
+      let array = new Array(5);
+      let max = 0;
+      document.write("전체 배열의 값: ");
+      for (let i = 0; i < n; i++) {
+        array[i] = Math.floor(Math.random() * 100 + 1);
+        document.writeln(array[i]);
+      }
+
+      let temp;
+      for (let i = 0; i < Math.floor(n / 2); i++) {
+        temp = array[i];
+        array[i] = array[n - 1 - i];
+        array[n - 1 - i] = temp;
+      }
+
+      document.write("<br><br>" + "리버스된 배열의 값: ");
+      for (let i = 0; i < n; i++) {
+        document.writeln(array[i]);
+      }
+    </script>
+  </body>
+</html>
