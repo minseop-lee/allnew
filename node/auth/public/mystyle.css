@@ -67,7 +67,6 @@ table {
 }
 td,
 th {
-  /* 모든 셀에 적용 */
   text-align: left;
   padding: 20px;
   height: 10px;
@@ -75,15 +74,12 @@ th {
 }
 thead,
 tfoot {
-  /* <thead>의 모든 셀에 적용 */
   background: black;
   color: yellow;
 }
 tbody tr:nth-child(even) {
-  /* 짝수 <tr>에 적용*/
   background: blue;
 }
 tbody tr:hover {
-  /* 마우스가 올라오면 pink 배경 */
   background: pink;
 }
