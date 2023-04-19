@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>가위바위보</title>
+  </head>
+  <body>
+    <h3>가위바위보</h3>
+    <hr />
+    <form id="rsp">
+      <input type="radio" name="choice" value="1" />가위
+      <input type="radio" name="choice" value="2" />바위
+      <input type="radio" name="choice" value="3" />보
+      <button type="submit">결과 확인</button>
+    </form>
+    <script>
+      var rsp = [];
+      rsp[1] = "가위";
+      rsp[2] = "바위";
+      rsp[3] = "보";
+
+      const form = document.getElementById("rsp");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let y = parseInt(
+          document.querySelector('input[name="choice"]:checked').value
+        );
+        let x = Math.floor(Math.random() * 3 + 1);
+        let result;
+
+        if (x == y) {
+          result = "비겼습니다.";
+        } else if (
+          (x == 1 && y == 2) ||
+          (x == 2 && y == 3) ||
+          (x == 3 && y == 1)
+        ) {
+          result = "이겼습니다.";
+        } else {
+          result = "졌습니다.";
+        }
+
+        alert(
+          "내가 낸 거 : " +
+            rsp[y] +
+            " vs 컴퓨터 : " +
+            rsp[x] +
+            "\n결과 : " +
+            result
+        );
+      });
+    </script>
+  </body>
+</html>
