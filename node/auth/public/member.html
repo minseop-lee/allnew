@@ -27,9 +27,14 @@
         if (!window.sessionStorage) {
           alert("세션 스토리지를 지원하지 않습니다.");
           return;
+        } else {
+          if (id == "") {
+            checkSession();
+          } else {
+            sessionStorage.setItem(id, now);
+            alert(`사용자 ${id} 님이 로그인 하셨습니다.`);
+          }
         }
-        sessionStorage.setItem(id, now);
-        alert(`사용자 ${id} 님이 로그인 하셨습니다.`);
       }
       function logout() {
         if (confirm("로그아웃 하시겠습니까?")) {
@@ -38,12 +43,17 @@
           location.href = "/index.html";
         }
       }
+      function checkSession() {
+        let id = getParameter("id");
+        sessionStorage.removeItem("");
+        alert("비정상적인 접근입니다.");
+        location.href = "/index.html";
+      }
     </script>
   </head>
   <body onload="sessionStore()">
     <h3>User Authentication</h3>
     <button style="float: right" onclick="logout()">로그아웃</button>
-
     <hr />
     <form action="/insert" target="targetURL" name="userForm" method="post">
       <p>Userid : <input type="text" size="15" name="id" /></p>

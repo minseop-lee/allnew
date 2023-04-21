@@ -43,9 +43,14 @@
         if (!window.sessionStorage) {
           alert("세션 스토리지를 지원하지 않습니다.");
           return;
+        } else {
+          if (id == "") {
+            checkSession();
+          } else {
+            sessionStorage.setItem(id, now);
+            alert(`사용자 ${id} 님이 로그인 하셨습니다.`);
+          }
         }
-        sessionStorage.setItem(id, now);
-        alert(`사용자 ${id} 님이 로그인 하셨습니다.`);
       }
       function logout() {
         if (confirm("로그아웃 하시겠습니까?")) {
@@ -53,6 +58,12 @@
           sessionStorage.removeItem(id);
           location.href = "/index.html";
         }
+      }
+      function checkSession() {
+        let id = getParameter("id");
+        sessionStorage.removeItem("");
+        alert("비정상적인 접근입니다.");
+        location.href = "/index.html";
       }
     </script>
   </head>
@@ -73,13 +84,6 @@
         <li style="float: right"><a onclick="logout()">로그아웃</a></li>
       </ul>
     </nav>
-    <!-- <iframe
-      name="targetURL"
-      width="100%"
-      height="500"
-      style="border: none"
-      src="/select"
-    ></iframe> -->
     <p style="font-size: 70px">안녕하세요.</p>
   </body>
 </html>
