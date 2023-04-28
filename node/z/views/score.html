@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>성취도 확인</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>성취도 확인</h1>
+    <ul>
+      <% scores.forEach(score => { %>
+      <li><%= score.subject %>: <%= score.points %>점</li>
+      <% }) %>
+    </ul>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

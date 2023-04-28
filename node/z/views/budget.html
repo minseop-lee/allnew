@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>예산 관리</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>예산 관리</h1>
+    <form action="/budget" method="post">
+      <input type="hidden" name="user_id" value="1" />
+      <!-- 임시로 1로 설정 -->
+      <label for="expected_salary">예상 연봉:</label>
+      <input
+        type="number"
+        id="expected_salary"
+        name="expected_salary"
+        value="<%= budget.expected_salary %>"
+        required
+      />
+      <label for="weekly_budget">일주일 사용 가능한 예산:</label>
+      <input
+        type="number"
+        id="weekly_budget"
+        name="weekly_budget"
+        value="<%= budget.weekly_budget %>"
+        required
+      />
+      <button type="submit">저장</button>
+    </form>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

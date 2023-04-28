@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>학습일지 작성</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>학습일지 작성</h1>
+    <form action="/learning_record" method="post">
+      <input type="hidden" name="user_id" value="1" />
+      <!-- 임시로 1로 설정 -->
+      <label for="subject">과목:</label>
+      <select id="subject" name="subject">
+        <option value="국어">국어</option>
+        <option value="수학">수학</option>
+        <option value="영어">영어</option>
+        <option value="과학">과학</option>
+      </select>
+      <label for="content">내용:</label>
+      <textarea id="content" name="content" required></textarea>
+      <button type="submit">작성완료</button>
+    </form>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
