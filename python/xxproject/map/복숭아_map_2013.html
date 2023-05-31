@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_618f56141b5b20d53d6f1e69fbbb43bd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_618f56141b5b20d53d6f1e69fbbb43bd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_618f56141b5b20d53d6f1e69fbbb43bd = L.map(
+                "map_618f56141b5b20d53d6f1e69fbbb43bd",
+                {
+                    center: [36.5, 128.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1f1f018f559e84294b0c201f1e62ac3d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+            var circle_marker_c884fe255aab1c4a15b8f2d064cd9982 = L.circleMarker(
+                [37.8228, 128.1555],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 54.8, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_20a986a655803cc0e4032368dcf7d9c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a6aa584d49242bf9f73c5552e42fb0b = $(`<div id="html_2a6aa584d49242bf9f73c5552e42fb0b" style="width: 100.0%; height: 100.0%;">강원도 2013년 복숭아 재배 면적: 548.0</div>`)[0];
+                popup_20a986a655803cc0e4032368dcf7d9c5.setContent(html_2a6aa584d49242bf9f73c5552e42fb0b);
+            
+        
+
+        circle_marker_c884fe255aab1c4a15b8f2d064cd9982.bindPopup(popup_20a986a655803cc0e4032368dcf7d9c5)
+        ;
+
+        
+    
+    
+            var circle_marker_ed77d76c34f07531f625ae37dd4769c5 = L.circleMarker(
+                [37.4138, 127.5183],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 91.4, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_0cad2c277a82050563d4c2459831f567 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c838eebdaca9eccf2ed6438440e26df1 = $(`<div id="html_c838eebdaca9eccf2ed6438440e26df1" style="width: 100.0%; height: 100.0%;">경기도 2013년 복숭아 재배 면적: 914.0</div>`)[0];
+                popup_0cad2c277a82050563d4c2459831f567.setContent(html_c838eebdaca9eccf2ed6438440e26df1);
+            
+        
+
+        circle_marker_ed77d76c34f07531f625ae37dd4769c5.bindPopup(popup_0cad2c277a82050563d4c2459831f567)
+        ;
+
+        
+    
+    
+            var circle_marker_616f36f1535bc6a8e396f4490936b6be = L.circleMarker(
+                [35.4606, 128.2132],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.9, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_e7cb7484169164ab7d35961faaf1d846 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77bcf176c14974b8d8ca4586387428ee = $(`<div id="html_77bcf176c14974b8d8ca4586387428ee" style="width: 100.0%; height: 100.0%;">경상남도 2013년 복숭아 재배 면적: 359.0</div>`)[0];
+                popup_e7cb7484169164ab7d35961faaf1d846.setContent(html_77bcf176c14974b8d8ca4586387428ee);
+            
+        
+
+        circle_marker_616f36f1535bc6a8e396f4490936b6be.bindPopup(popup_e7cb7484169164ab7d35961faaf1d846)
+        ;
+
+        
+    
+    
+            var circle_marker_5b4a184d01cef9ab0df4d18505d4395e = L.circleMarker(
+                [36.4919, 128.8889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.36, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_087d228ec3d4fb13b2bf64f34db48ca1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f98ff5ce714ad3b7ec32db22905e208 = $(`<div id="html_7f98ff5ce714ad3b7ec32db22905e208" style="width: 100.0%; height: 100.0%;">경상북도 2013년 복숭아 재배 면적: 7180.0</div>`)[0];
+                popup_087d228ec3d4fb13b2bf64f34db48ca1.setContent(html_7f98ff5ce714ad3b7ec32db22905e208);
+            
+        
+
+        circle_marker_5b4a184d01cef9ab0df4d18505d4395e.bindPopup(popup_087d228ec3d4fb13b2bf64f34db48ca1)
+        ;
+
+        
+    
+    
+            var circle_marker_48ec1c383125517d34e94d9faf8b1d7d = L.circleMarker(
+                [35.1605, 126.8514],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_5b7d0c1e0269e78aa346217c13eb428d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_544cbdfbb0d1c1416e4adc5ee8c046dc = $(`<div id="html_544cbdfbb0d1c1416e4adc5ee8c046dc" style="width: 100.0%; height: 100.0%;">광주광역시 2013년 복숭아 재배 면적: 19.0</div>`)[0];
+                popup_5b7d0c1e0269e78aa346217c13eb428d.setContent(html_544cbdfbb0d1c1416e4adc5ee8c046dc);
+            
+        
+
+        circle_marker_48ec1c383125517d34e94d9faf8b1d7d.bindPopup(popup_5b7d0c1e0269e78aa346217c13eb428d)
+        ;
+
+        
+    
+    
+            var circle_marker_979d53138699fe80348c35df441f9f81 = L.circleMarker(
+                [35.8714, 128.6014],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.2, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_639daccf675bff7a3c49f304994d1288 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8922dd92b9a8e7b6e3288af11d6b6c6 = $(`<div id="html_c8922dd92b9a8e7b6e3288af11d6b6c6" style="width: 100.0%; height: 100.0%;">대구광역시 2013년 복숭아 재배 면적: 222.0</div>`)[0];
+                popup_639daccf675bff7a3c49f304994d1288.setContent(html_c8922dd92b9a8e7b6e3288af11d6b6c6);
+            
+        
+
+        circle_marker_979d53138699fe80348c35df441f9f81.bindPopup(popup_639daccf675bff7a3c49f304994d1288)
+        ;
+
+        
+    
+    
+            var circle_marker_5a1bedf25d875a38910823de11073882 = L.circleMarker(
+                [36.3504, 127.3845],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.7, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_fcbd976f6c1440efd997d08024b47a57 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f25093de15313f65db081c0722da7dd = $(`<div id="html_9f25093de15313f65db081c0722da7dd" style="width: 100.0%; height: 100.0%;">대전광역시 2013년 복숭아 재배 면적: 7.0</div>`)[0];
+                popup_fcbd976f6c1440efd997d08024b47a57.setContent(html_9f25093de15313f65db081c0722da7dd);
+            
+        
+
+        circle_marker_5a1bedf25d875a38910823de11073882.bindPopup(popup_fcbd976f6c1440efd997d08024b47a57)
+        ;
+
+        
+    
+    
+            var circle_marker_521f1ca57a3564b0fdb493e75ea06040 = L.circleMarker(
+                [35.1796, 129.0756],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_dbd56f9a08f3503a116ad0535de4084b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb86535fc5b3d2782611bff1897e82de = $(`<div id="html_fb86535fc5b3d2782611bff1897e82de" style="width: 100.0%; height: 100.0%;">부산광역시 2013년 복숭아 재배 면적: 0.0</div>`)[0];
+                popup_dbd56f9a08f3503a116ad0535de4084b.setContent(html_fb86535fc5b3d2782611bff1897e82de);
+            
+        
+
+        circle_marker_521f1ca57a3564b0fdb493e75ea06040.bindPopup(popup_dbd56f9a08f3503a116ad0535de4084b)
+        ;
+
+        
+    
+    
+            var circle_marker_de6922fb4660bfdef6bf67da128bb54f = L.circleMarker(
+                [37.5665, 126.978],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_489530935f9d74097fef5d397545a463 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64cfcbd6d5d7aa4200c9556706271f75 = $(`<div id="html_64cfcbd6d5d7aa4200c9556706271f75" style="width: 100.0%; height: 100.0%;">서울특별시 2013년 복숭아 재배 면적: 1.0</div>`)[0];
+                popup_489530935f9d74097fef5d397545a463.setContent(html_64cfcbd6d5d7aa4200c9556706271f75);
+            
+        
+
+        circle_marker_de6922fb4660bfdef6bf67da128bb54f.bindPopup(popup_489530935f9d74097fef5d397545a463)
+        ;
+
+        
+    
+    
+            var circle_marker_f032dfd92561662be3445c6c57909f4e = L.circleMarker(
+                [35.5384, 129.3114],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_af598d0d0e260a739326641cc8c63598 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_712c92a86dc3b0a5ab8b550cc169571c = $(`<div id="html_712c92a86dc3b0a5ab8b550cc169571c" style="width: 100.0%; height: 100.0%;">울산광역시 2013년 복숭아 재배 면적: 3.0</div>`)[0];
+                popup_af598d0d0e260a739326641cc8c63598.setContent(html_712c92a86dc3b0a5ab8b550cc169571c);
+            
+        
+
+        circle_marker_f032dfd92561662be3445c6c57909f4e.bindPopup(popup_af598d0d0e260a739326641cc8c63598)
+        ;
+
+        
+    
+    
+            var circle_marker_e3faf80f6a690862f4651ab69993ed43 = L.circleMarker(
+                [37.4563, 126.7052],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.9, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_49d0928dd3183a3c784ee1b8cfabd244 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16c770ec178c68130fe9af1483f92b20 = $(`<div id="html_16c770ec178c68130fe9af1483f92b20" style="width: 100.0%; height: 100.0%;">인천광역시 2013년 복숭아 재배 면적: 29.0</div>`)[0];
+                popup_49d0928dd3183a3c784ee1b8cfabd244.setContent(html_16c770ec178c68130fe9af1483f92b20);
+            
+        
+
+        circle_marker_e3faf80f6a690862f4651ab69993ed43.bindPopup(popup_49d0928dd3183a3c784ee1b8cfabd244)
+        ;
+
+        
+    
+    
+            var circle_marker_be8ded4c539754743b1db6fd37fea211 = L.circleMarker(
+                [34.8194, 126.893],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 43.2, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_df289d8a13949a62787b88f02cb2ad44 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bfdfb2c33716bdbbf2d0f620ff66d307 = $(`<div id="html_bfdfb2c33716bdbbf2d0f620ff66d307" style="width: 100.0%; height: 100.0%;">전라남도 2013년 복숭아 재배 면적: 432.0</div>`)[0];
+                popup_df289d8a13949a62787b88f02cb2ad44.setContent(html_bfdfb2c33716bdbbf2d0f620ff66d307);
+            
+        
+
+        circle_marker_be8ded4c539754743b1db6fd37fea211.bindPopup(popup_df289d8a13949a62787b88f02cb2ad44)
+        ;
+
+        
+    
+    
+            var circle_marker_ee7679f2eecdca61e920ce79050c324c = L.circleMarker(
+                [35.7167, 127.1448],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 69.8, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_c01df7c919e98bcadf72500cc4e7a72f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb9c71e84e71e4e8a97292fae08e6b69 = $(`<div id="html_eb9c71e84e71e4e8a97292fae08e6b69" style="width: 100.0%; height: 100.0%;">전라북도 2013년 복숭아 재배 면적: 698.0</div>`)[0];
+                popup_c01df7c919e98bcadf72500cc4e7a72f.setContent(html_eb9c71e84e71e4e8a97292fae08e6b69);
+            
+        
+
+        circle_marker_ee7679f2eecdca61e920ce79050c324c.bindPopup(popup_c01df7c919e98bcadf72500cc4e7a72f)
+        ;
+
+        
+    
+    
+            var circle_marker_dbc3ef81da1c27fe5e9155d5a7458ec8 = L.circleMarker(
+                [33.4996, 126.5312],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_25d1d30fe8ca02577d31fbe43ef3c48b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6995923728266fdd4d72ab4b255af789 = $(`<div id="html_6995923728266fdd4d72ab4b255af789" style="width: 100.0%; height: 100.0%;">제주특별자치도 2013년 복숭아 재배 면적: 1.0</div>`)[0];
+                popup_25d1d30fe8ca02577d31fbe43ef3c48b.setContent(html_6995923728266fdd4d72ab4b255af789);
+            
+        
+
+        circle_marker_dbc3ef81da1c27fe5e9155d5a7458ec8.bindPopup(popup_25d1d30fe8ca02577d31fbe43ef3c48b)
+        ;
+
+        
+    
+    
+            var circle_marker_9e27695f76b9ac19576a84861088aef7 = L.circleMarker(
+                [36.6588, 126.6728],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51.1, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_79de5a8b3979184b695d7a3d1d2e674f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18b0342f4f7c0a86c01966e5dcb20dac = $(`<div id="html_18b0342f4f7c0a86c01966e5dcb20dac" style="width: 100.0%; height: 100.0%;">충청남도 2013년 복숭아 재배 면적: 511.0</div>`)[0];
+                popup_79de5a8b3979184b695d7a3d1d2e674f.setContent(html_18b0342f4f7c0a86c01966e5dcb20dac);
+            
+        
+
+        circle_marker_9e27695f76b9ac19576a84861088aef7.bindPopup(popup_79de5a8b3979184b695d7a3d1d2e674f)
+        ;
+
+        
+    
+    
+            var circle_marker_2786f4fdd548ce60ba3f87ce11ebec0b = L.circleMarker(
+                [36.6285, 127.9293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.418, "stroke": true, "weight": 3}
+            ).addTo(map_618f56141b5b20d53d6f1e69fbbb43bd);
+        
+    
+        var popup_75527b44492dd2a8792c3b4b3442e7fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6163f34f41831e0ef0ba7dde2a5de47b = $(`<div id="html_6163f34f41831e0ef0ba7dde2a5de47b" style="width: 100.0%; height: 100.0%;">충청북도 2013년 복숭아 재배 면적: 3709.0</div>`)[0];
+                popup_75527b44492dd2a8792c3b4b3442e7fa.setContent(html_6163f34f41831e0ef0ba7dde2a5de47b);
+            
+        
+
+        circle_marker_2786f4fdd548ce60ba3f87ce11ebec0b.bindPopup(popup_75527b44492dd2a8792c3b4b3442e7fa)
+        ;
+
+        
+    
+</script>
+</html>

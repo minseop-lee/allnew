@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ae0bb44d181810d58a2748a5c2656ce7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ae0bb44d181810d58a2748a5c2656ce7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ae0bb44d181810d58a2748a5c2656ce7 = L.map(
+                "map_ae0bb44d181810d58a2748a5c2656ce7",
+                {
+                    center: [36.5, 128.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ba69885b0359a74be8cc90be435aa079 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+            var circle_marker_6adf530eb1bab03519d77a666abc8da4 = L.circleMarker(
+                [37.8228, 128.1555],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_af9e5632f25f74b3cc945420567dce7d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7d238091d0104c95599d53b85a30a93 = $(`<div id="html_a7d238091d0104c95599d53b85a30a93" style="width: 100.0%; height: 100.0%;">강원도 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_af9e5632f25f74b3cc945420567dce7d.setContent(html_a7d238091d0104c95599d53b85a30a93);
+            
+        
+
+        circle_marker_6adf530eb1bab03519d77a666abc8da4.bindPopup(popup_af9e5632f25f74b3cc945420567dce7d)
+        ;
+
+        
+    
+    
+            var circle_marker_f8a5dacdb8dcb08fb323caa1b477812e = L.circleMarker(
+                [37.4138, 127.5183],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.9, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_df02d682e6f467455667f668e8862969 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_87fb238ce4cae5d42346b313f20d6d2d = $(`<div id="html_87fb238ce4cae5d42346b313f20d6d2d" style="width: 100.0%; height: 100.0%;">경기도 2020년 감귤 재배 면적: 9.0</div>`)[0];
+                popup_df02d682e6f467455667f668e8862969.setContent(html_87fb238ce4cae5d42346b313f20d6d2d);
+            
+        
+
+        circle_marker_f8a5dacdb8dcb08fb323caa1b477812e.bindPopup(popup_df02d682e6f467455667f668e8862969)
+        ;
+
+        
+    
+    
+            var circle_marker_98be58fdb56a59928d2a38a7e458f31a = L.circleMarker(
+                [35.4606, 128.2132],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.6, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_25570c0d013fd77c0bb9269c2a59d184 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c44993b9282f78cff75ac17dce573ef4 = $(`<div id="html_c44993b9282f78cff75ac17dce573ef4" style="width: 100.0%; height: 100.0%;">경상남도 2020년 감귤 재배 면적: 6.0</div>`)[0];
+                popup_25570c0d013fd77c0bb9269c2a59d184.setContent(html_c44993b9282f78cff75ac17dce573ef4);
+            
+        
+
+        circle_marker_98be58fdb56a59928d2a38a7e458f31a.bindPopup(popup_25570c0d013fd77c0bb9269c2a59d184)
+        ;
+
+        
+    
+    
+            var circle_marker_f47b411bc2fb260350f87652fbe68e2f = L.circleMarker(
+                [36.4919, 128.8889],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_1a447538715bc2f30585069aa3731166 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5d763cd106c981e1cc71f3bca6a2359c = $(`<div id="html_5d763cd106c981e1cc71f3bca6a2359c" style="width: 100.0%; height: 100.0%;">경상북도 2020년 감귤 재배 면적: 20.0</div>`)[0];
+                popup_1a447538715bc2f30585069aa3731166.setContent(html_5d763cd106c981e1cc71f3bca6a2359c);
+            
+        
+
+        circle_marker_f47b411bc2fb260350f87652fbe68e2f.bindPopup(popup_1a447538715bc2f30585069aa3731166)
+        ;
+
+        
+    
+    
+            var circle_marker_9001cddda6b63baf82148d1b881739a5 = L.circleMarker(
+                [35.1605, 126.8514],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_73d927024a26ee97025051a008755b9f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_22ef21653099f17c9e1427f0293ad383 = $(`<div id="html_22ef21653099f17c9e1427f0293ad383" style="width: 100.0%; height: 100.0%;">광주광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_73d927024a26ee97025051a008755b9f.setContent(html_22ef21653099f17c9e1427f0293ad383);
+            
+        
+
+        circle_marker_9001cddda6b63baf82148d1b881739a5.bindPopup(popup_73d927024a26ee97025051a008755b9f)
+        ;
+
+        
+    
+    
+            var circle_marker_105cd4124f2a9040b939b6931ba11e39 = L.circleMarker(
+                [35.8714, 128.6014],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_f761e6f4de7514f57fd57f69d5113291 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19542d03edc8a090e64465db9634a812 = $(`<div id="html_19542d03edc8a090e64465db9634a812" style="width: 100.0%; height: 100.0%;">대구광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_f761e6f4de7514f57fd57f69d5113291.setContent(html_19542d03edc8a090e64465db9634a812);
+            
+        
+
+        circle_marker_105cd4124f2a9040b939b6931ba11e39.bindPopup(popup_f761e6f4de7514f57fd57f69d5113291)
+        ;
+
+        
+    
+    
+            var circle_marker_ede337d29a680e817c1e8856f34e5844 = L.circleMarker(
+                [36.3504, 127.3845],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_01d4ae448e1fc4b0bafa42a92c3d6fa7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35b2cdd65e49d8f0922c08955a2ece40 = $(`<div id="html_35b2cdd65e49d8f0922c08955a2ece40" style="width: 100.0%; height: 100.0%;">대전광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_01d4ae448e1fc4b0bafa42a92c3d6fa7.setContent(html_35b2cdd65e49d8f0922c08955a2ece40);
+            
+        
+
+        circle_marker_ede337d29a680e817c1e8856f34e5844.bindPopup(popup_01d4ae448e1fc4b0bafa42a92c3d6fa7)
+        ;
+
+        
+    
+    
+            var circle_marker_19e8358b8d89974f5e970be7b2d34c29 = L.circleMarker(
+                [35.1796, 129.0756],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_55a82810de0529148eff374141dde17e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca62cfb5a8e64ac507440eed30538fb5 = $(`<div id="html_ca62cfb5a8e64ac507440eed30538fb5" style="width: 100.0%; height: 100.0%;">부산광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_55a82810de0529148eff374141dde17e.setContent(html_ca62cfb5a8e64ac507440eed30538fb5);
+            
+        
+
+        circle_marker_19e8358b8d89974f5e970be7b2d34c29.bindPopup(popup_55a82810de0529148eff374141dde17e)
+        ;
+
+        
+    
+    
+            var circle_marker_6c5e0673b4185e9b05864556d7742789 = L.circleMarker(
+                [37.5665, 126.978],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_cc48bfc201d8d92ebce2c6af79240c1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fdc05f522d153b0d87c8224234276c5c = $(`<div id="html_fdc05f522d153b0d87c8224234276c5c" style="width: 100.0%; height: 100.0%;">서울특별시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_cc48bfc201d8d92ebce2c6af79240c1b.setContent(html_fdc05f522d153b0d87c8224234276c5c);
+            
+        
+
+        circle_marker_6c5e0673b4185e9b05864556d7742789.bindPopup(popup_cc48bfc201d8d92ebce2c6af79240c1b)
+        ;
+
+        
+    
+    
+            var circle_marker_3ae4505883e72ab1cd2bb0607088c0ad = L.circleMarker(
+                [36.4801, 127.2892],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_112fe2f79313660fe58569d791b5b013 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6569b14b8184099ffad26b992b71d0f3 = $(`<div id="html_6569b14b8184099ffad26b992b71d0f3" style="width: 100.0%; height: 100.0%;">세종특별자치시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_112fe2f79313660fe58569d791b5b013.setContent(html_6569b14b8184099ffad26b992b71d0f3);
+            
+        
+
+        circle_marker_3ae4505883e72ab1cd2bb0607088c0ad.bindPopup(popup_112fe2f79313660fe58569d791b5b013)
+        ;
+
+        
+    
+    
+            var circle_marker_2097b05b61db9085ff409e9cfe498e52 = L.circleMarker(
+                [35.5384, 129.3114],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_2940242f08f07405a53d6694e9cf2505 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_469c631b10ae8610e4be846455749ae2 = $(`<div id="html_469c631b10ae8610e4be846455749ae2" style="width: 100.0%; height: 100.0%;">울산광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_2940242f08f07405a53d6694e9cf2505.setContent(html_469c631b10ae8610e4be846455749ae2);
+            
+        
+
+        circle_marker_2097b05b61db9085ff409e9cfe498e52.bindPopup(popup_2940242f08f07405a53d6694e9cf2505)
+        ;
+
+        
+    
+    
+            var circle_marker_fc7003fe50a4e803fe79530bb339df9a = L.circleMarker(
+                [37.4563, 126.7052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_75dd507c58b7957bdc9d3b6c9eb4ecc8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bbda8618a6f32e3afed37c65c013f01 = $(`<div id="html_9bbda8618a6f32e3afed37c65c013f01" style="width: 100.0%; height: 100.0%;">인천광역시 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_75dd507c58b7957bdc9d3b6c9eb4ecc8.setContent(html_9bbda8618a6f32e3afed37c65c013f01);
+            
+        
+
+        circle_marker_fc7003fe50a4e803fe79530bb339df9a.bindPopup(popup_75dd507c58b7957bdc9d3b6c9eb4ecc8)
+        ;
+
+        
+    
+    
+            var circle_marker_5612169a9fdef1cfefad86f4e01d8595 = L.circleMarker(
+                [34.8194, 126.893],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_827016b39eb5be211fc9af60aed67846 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1928e2cb9c90c90a079c13f34a1502dd = $(`<div id="html_1928e2cb9c90c90a079c13f34a1502dd" style="width: 100.0%; height: 100.0%;">전라남도 2020년 감귤 재배 면적: 62.0</div>`)[0];
+                popup_827016b39eb5be211fc9af60aed67846.setContent(html_1928e2cb9c90c90a079c13f34a1502dd);
+            
+        
+
+        circle_marker_5612169a9fdef1cfefad86f4e01d8595.bindPopup(popup_827016b39eb5be211fc9af60aed67846)
+        ;
+
+        
+    
+    
+            var circle_marker_411827b471b22a5dc3aaf9e8ff397b88 = L.circleMarker(
+                [35.7167, 127.1448],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_6fe121ccb525c8ca6d845d5432de955a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b7f527ca8fb23aef9a57d4831fae36e3 = $(`<div id="html_b7f527ca8fb23aef9a57d4831fae36e3" style="width: 100.0%; height: 100.0%;">전라북도 2020년 감귤 재배 면적: 0.0</div>`)[0];
+                popup_6fe121ccb525c8ca6d845d5432de955a.setContent(html_b7f527ca8fb23aef9a57d4831fae36e3);
+            
+        
+
+        circle_marker_411827b471b22a5dc3aaf9e8ff397b88.bindPopup(popup_6fe121ccb525c8ca6d845d5432de955a)
+        ;
+
+        
+    
+    
+            var circle_marker_e9a06fa362f4ac7e090fc4732ba3fa02 = L.circleMarker(
+                [33.4996, 126.5312],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 41.982, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_8f706bd4764be8a7d2c224678d4a8f13 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6087fd30f719176d59c5784f6bd7b6c = $(`<div id="html_b6087fd30f719176d59c5784f6bd7b6c" style="width: 100.0%; height: 100.0%;">제주특별자치도 2020년 감귤 재배 면적: 20991.0</div>`)[0];
+                popup_8f706bd4764be8a7d2c224678d4a8f13.setContent(html_b6087fd30f719176d59c5784f6bd7b6c);
+            
+        
+
+        circle_marker_e9a06fa362f4ac7e090fc4732ba3fa02.bindPopup(popup_8f706bd4764be8a7d2c224678d4a8f13)
+        ;
+
+        
+    
+    
+            var circle_marker_6538727fbd1b0b65118d1ff9d775a6a1 = L.circleMarker(
+                [36.6588, 126.6728],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.1, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_b1d1560329c0aa1c897a102255cab38a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e98bff5197c84de6e1ffea1872bbce71 = $(`<div id="html_e98bff5197c84de6e1ffea1872bbce71" style="width: 100.0%; height: 100.0%;">충청남도 2020년 감귤 재배 면적: 21.0</div>`)[0];
+                popup_b1d1560329c0aa1c897a102255cab38a.setContent(html_e98bff5197c84de6e1ffea1872bbce71);
+            
+        
+
+        circle_marker_6538727fbd1b0b65118d1ff9d775a6a1.bindPopup(popup_b1d1560329c0aa1c897a102255cab38a)
+        ;
+
+        
+    
+    
+            var circle_marker_b80963b99676c68f54186fe3d3682239 = L.circleMarker(
+                [36.6285, 127.9293],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2, "stroke": true, "weight": 3}
+            ).addTo(map_ae0bb44d181810d58a2748a5c2656ce7);
+        
+    
+        var popup_ad930963c8d01414c17d1ebd64137e05 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64b98316bdf070812d1ef05f88375f38 = $(`<div id="html_64b98316bdf070812d1ef05f88375f38" style="width: 100.0%; height: 100.0%;">충청북도 2020년 감귤 재배 면적: 2.0</div>`)[0];
+                popup_ad930963c8d01414c17d1ebd64137e05.setContent(html_64b98316bdf070812d1ef05f88375f38);
+            
+        
+
+        circle_marker_b80963b99676c68f54186fe3d3682239.bindPopup(popup_ad930963c8d01414c17d1ebd64137e05)
+        ;
+
+        
+    
+</script>
+</html>

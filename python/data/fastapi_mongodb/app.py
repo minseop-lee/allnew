@@ -75,7 +75,7 @@ async def userupdate (id=None, name=None):
         else:
             return f"id = {id} 데이터가 존재하지 않습니다."
     
-@app.get("userdel")
+@app.get("/userdel")
 async def userdel(id=None):
     if id is None:
         return "id를 입력하세요"
