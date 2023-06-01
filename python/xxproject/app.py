@@ -1,8 +1,6 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import List
-import data
 from data import db_conn
+from fastapi import FastAPI
+import data
 
 app = FastAPI()
 
@@ -46,7 +44,7 @@ async def dataframe_combined(fruit: str):
 async def get_graph_fruit(fruit: str, regions: str):
     return data.graph_fruit(fruit, regions)
 
-@app.get('/graph_combined/{fruit}')
+@app.get("/graph_combined/{fruit}")
 async def graph_combined(fruit: str):
     return data.graph_combined(fruit)
 
