@@ -15,31 +15,21 @@ def get_secret(setting, secrets=secrets):
         errorMsg = "Set the {} environment variable.".format(setting)
         return errorMsg
         
-BotToken = get_secret("slack_BotOAuthToken")
-slack = SlackAPI(BotToken)
-channel_name = "프로젝트"
-query = "슬랙봇 테스트"
-text = "안녕하세요. 슬랙봇입니다."
-
-channel_id = slack.get_channel_id(channel_name)
-messgage_ts = slack.get_message_ts(channel_id, query)
-slack.post_thread_message(channel_id, mesage_ts, text)
-
 class SlackAPI:
     def __init__(self, token):
         self.client = WebClient(token)
         
     def get_channel_id(self, channel_name):
-        result = self.client.conversation_list()
+        result = self.client.conversations_list()
         channels = result.data['channels']
-        channel = list(filter(lambda c: c['name'] == channel_name, channels))[0]
+        channel = list(filter(lambda c: c['name']==channel_name, channels))[0]
         channel_id = channel["id"]
         return channel_id
         
     def get_message_ts(self, channel_id, query):
-        result = self.client.conversation_history(channel=channel_id)
+        result = self.client.conversations_history(channel=channel_id)
         messages = result.data['messages']
-        messgaes = list(filter(lambda m: m["text"] == query, messages))[0]
+        message = list(filter(lambda m: m["text"]==query, messages))[0]
         message_ts = message["ts"]
         return message_ts
         
@@ -57,3 +47,14 @@ class SlackAPI:
             text = text
         )
         return result
+
+BotToken = get_secret("slack_BotOAuthToken")
+slack = SlackAPI(BotToken)
+channel_name = "프로젝트"
+query = "슬랙봇 테스트"
+text = "안녕하세요. 슬랙봇입니다."
+
+channel_id = slack.get_channel_id(channel_name)
+message_ts = slack.get_message_ts(channel_id, query)
+slack.post_thread_message(channel_id, message_ts, text)
+
