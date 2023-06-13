@@ -57,4 +57,3 @@ text = "안녕하세요. 슬랙봇입니다."
 channel_id = slack.get_channel_id(channel_name)
 message_ts = slack.get_message_ts(channel_id, query)
 slack.post_thread_message(channel_id, message_ts, text)
-
