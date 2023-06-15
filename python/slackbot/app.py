@@ -1,6 +1,11 @@
-from slack_sdk import WebClient
+import requests
+import uvicorn
+from fastapi import FastAPI, status
+from fastapi.responses import PlainTextResponse
 import os.path
 import json
+
+app = FastAPI()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.relpath("./")))
 secret_file = os.path.join(BASE_DIR, "../secret.json")
@@ -15,45 +20,40 @@ def get_secret(setting, secrets=secrets):
         errorMsg = "Set the {} environment variable.".format(setting)
         return errorMsg
         
-class SlackAPI:
-    def __init__(self, token):
-        self.client = WebClient(token)
-        
-    def get_channel_id(self, channel_name):
-        result = self.client.conversations_list()
-        channels = result.data['channels']
-        channel = list(filter(lambda c: c['name']==channel_name, channels))[0]
-        channel_id = channel["id"]
-        return channel_id
-        
-    def get_message_ts(self, channel_id, query):
-        result = self.client.conversations_history(channel=channel_id)
-        messages = result.data['messages']
-        message = list(filter(lambda m: m["text"]==query, messages))[0]
-        message_ts = message["ts"]
-        return message_ts
-        
-    def post_thread_message(self, channel_id, message_ts, text):
-        result = self.client.chat_postMessage(
-            channel=channel_id,
-            text = text,
-            thread_ts = message_ts
-            )
-        return result
-    
-    def post_message(self, channel_id, text):
-        result = self.client.chat_postMessage(
-            channel = channel_id,
-            text = text
-        )
-        return result
+UserToken = get_secret('slack_UserOAuthToken')
+BotToken = get_secret('slack_BotOAuthToken')
 
-BotToken = get_secret("slack_BotOAuthToken")
-slack = SlackAPI(BotToken)
-channel_name = "프로젝트"
-query = "슬랙봇 테스트"
-text = "안녕하세요. 슬랙봇입니다."
+channelName = "#cloud"
 
-channel_id = slack.get_channel_id(channel_name)
-message_ts = slack.get_message_ts(channel_id, query)
-slack.post_thread_message(channel_id, message_ts, text)
+@app.get(path='/')
+async def health_check():
+    return "OK"
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=3000)
+
+def post_message(token, channel, text):
+    response = requests.post("https://slack.com/api/chat.postMessage", 
+        headers = {"Authorization" : "Bearer "+token},
+        data={"channel":channel, "text":text}
+    )
+
+@app.post(path='/sendUserchat')
+async def sendUserChat(text:str):
+    post_message(UserToken,channelName,text)
+    return {f'message:{text}'} 
+
+@app.post(path='/sendBotchat')
+async def sendBotChat(text:str):
+    post_message(BotToken,channelName,text)
+    return {f'message:{text}'}
+
+@app.post(path='/sendhook')
+async def sendhook(text:str):
+    webhookToken = get_secret("slack_WebHookToken")
+    cmd = "curl -X POST -H "
+    cmd += "'Content-type: application/json' --data "
+    cmd += "'{" + '"text"' + ":" + '"' + text + '"' + "}' "
+    cmd += webhookToken
+    os.system(cmd)
+    return cmd
