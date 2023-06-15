@@ -1,7 +1,4 @@
 {
-    "build": {
-        "@saveall": true
-    },
     "extensions": {
         "@aws.profile": "",
         "@editor.acceptSuggestionOnEnter": "on",
@@ -9,7 +6,6 @@
         "@editor.suggest.preview": true,
         "@editor.suggest.showMethods": true,
         "@git.autofetch": true,
-        "@git.confirmSync": false,
         "@git.enableSmartCommit": true
     },
     "language": {
