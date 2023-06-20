@@ -47,3 +47,6 @@ oracle/node/node_modules
 oracle/node/package-lock.json
 
 ## html
+
+## node_modules
+**/node_modules
