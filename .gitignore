@@ -2,6 +2,7 @@
 .ftpconfig
 # environment files
 .env
+**/.env
 # .c9
 .c9
 ## c programing
