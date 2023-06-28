@@ -15,9 +15,8 @@ const users = [
 ]
 
 app.get('/hello', (req, res) => {
-    res.send("Hello World~!!\n");
+    res.send("Hello World~!!");
 })
-
 
 // request X , response O
 app.get("/api/users", (req, res) => {
@@ -26,18 +25,15 @@ app.get("/api/users", (req, res) => {
 
 // Query param, request O, response O
 app.get("/api/users/user", (req, res) => {
-    const user_id = req.query.user_id
-    const user = users.filter(data => data.id == user_id)
+    let user = "";
+    const { user_id, name } = req.query
+    if (req.query.name == undefined) {
+        user = users.filter(data => data.id == user_id)
+    } else {
+        user = users.filter(data => data.id == user_id && data.name == name)
+    }
     res.json({ok:false, users:user});
 })
-
-// Query param, request O, response O
-app.get("/api/users/useridname", (req, res) => {
-    const { user_id, name }= req.query
-    const user = users.filter(data => data.id == user_id && data.name == name)
-    res.json({ok:false, users:user});
-})
-
 
 // Path param, request O, response O
 app.get("/api/users/:user_id", (req, res) => {
@@ -56,7 +52,7 @@ app.post("/api/users/userBody", (req, res) => {
 // post, request body O, response O
 app.post("/api/users/add", (req, res) => {
     const { id, name } = req.body
-    const user = users.concat({ id, name })
+    const user = users.concat({ id, name})
     res.json({ok:true, users:user});
 })
 
@@ -66,8 +62,8 @@ app.put("/api/users/update", (req, res) => {
     const user = users.map(data => {
         if (data.id == id) data.name = name
         return {
-          id : data.id,
-          name : data.name
+            id : data.id,
+            name : data.name
         }
     })
     res.json({ok:true, users:user});
@@ -80,8 +76,8 @@ app.patch("/api/users/update/:user_id", (req, res) => {
     const user = users.map(data => {
         if (data.id == user_id) data.name = name
         return {
-          id : data.id,
-          name : data.name
+            id : data.id,
+            name : data.name
         }
     })
     res.json({ok:true, users:user});
@@ -91,7 +87,7 @@ app.patch("/api/users/update/:user_id", (req, res) => {
 app.delete("/api/users/delete", (req, res) => {
     const { user_id } = req.body
     const user = users.filter(data => data.id != user_id)
-    res.json({ok:true, users:user});
+    res.json({ok:false, users:user});
 })
 
 module.exports = app;
