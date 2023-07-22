@@ -53,3 +53,6 @@ oracle/node/package-lock.json
 **/node_modules
 python/.DS_Store
 python/.DS_Store
+
+# secret.json
+secret.json
