@@ -4,8 +4,8 @@ const axios = require('axios');
 
 const app = express();
 
-const GOOGLE_CLIENT_ID = 'GOOGLE_CLIENT_ID';
-const GOOGLE_CLIENT_SECRET = 'GOOGLE_CLIENT_SECRET';
+const GOOGLE_CLIENT_ID = '783091168402-e0frs7e6tsmbhk995v619p8kucl2u7ri.apps.googleusercontent.com';
+const GOOGLE_CLIENT_SECRET = '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';
 const GOOGLE_REDIRECT_URI = 'http://localhost:3000/login/redirect';
 
 // 루트 페이지
