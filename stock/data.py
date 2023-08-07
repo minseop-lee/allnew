@@ -1,6 +1,9 @@
-import requests, json, os.path, sqlalchemy, os
+import requests, json, os.path, sqlalchemy, os, pymysql
 from sqlalchemy import create_engine
 import pandas as pd
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.relpath("./")))
 secret_file = os.path.join(BASE_DIR, '../secret.json')
@@ -25,12 +28,31 @@ DBNAME = get_secret("Mysql_DBname")
 DB_URL = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
 print('Connected to Mysql....')
 
-engine = create_engine(DB_URL)
+engine = sqlalchemy.create_engine(DB_URL)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+class db_conn:
+    def __init__(self):
+        self.engine = create_engine(DB_URL, pool_recycle=500)
+
+    def sessionmaker(self):
+        Session = sessionmaker(bind=self.engine)
+        session = Session()
+        return session
+    
+    def connection(self):
+        conn = self.engine.connection()
+        return conn
+
+
+def healthCheck():
+    return "OK"
 
 def stock_data():
     url = 'https://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
     params = '?serviceKey=' + get_secret("data_apiKey")
-    params += '&pageNo=1&numOfRows=10&resultType=json'
+    params += '&pageNo=1&numOfRows=1000&resultType=json'
     url += params
     
     response = requests.get(url)
@@ -48,7 +70,7 @@ def process_data(data):
         
         # 필요한 데이터를 담을 리스트 초기화
         processed_data = []
-        
+
         for item in items:
             # 필요한 데이터 추출 및 컬럼 이름 변경
             processed_item = {
@@ -92,5 +114,23 @@ def main():
     else:
         print("Failed to fetch data from the API.")
 
+def get_all_data():
+    conn = engine.connect()
+    metadata = MetaData()
+    table_name = 'stock'
+    table = Table(table_name, metadata, autoload_with=engine)
+    stmt = select(table)
+    results = conn.execute(stmt).fetchall()
+    conn.close()
+
+    # 쿼리 결과를 딕셔너리 형태로 변환
+    data = [dict(zip(table.columns.keys(), result)) for result in results]
+
+    return data
+
+
+
+
 if __name__ == "__main__":
     main()
+
