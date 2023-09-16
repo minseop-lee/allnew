@@ -4,6 +4,7 @@ import pandas as pd
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import *
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.relpath("./")))
 secret_file = os.path.join(BASE_DIR, '../secret.json')
@@ -52,7 +53,7 @@ def healthCheck():
 def stock_data():
     url = 'https://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
     params = '?serviceKey=' + get_secret("data_apiKey")
-    params += '&pageNo=1&numOfRows=100&resultType=json'
+    params += '&pageNo=1&numOfRows=100000&resultType=json'
     url += params
     
     response = requests.get(url)
@@ -72,25 +73,40 @@ def process_data(data):
         processed_data = []
 
         for item in items:
-            # 필요한 데이터 추출 및 컬럼 이름 변경
-            processed_item = {
-                '기준일자': item['basDt'],
-                '법인등록번호': item['crno'],
-                '주식발행회사명': item['stckIssuCmpyNm'],
-                '현금배당일자': item['cashDvdnPayDt'],
-                'ISIN코드명': item['isinCdNm'],
-                '주식배당사유': item['stckDvdnRcdNm'],
-                '유가증권코드종류명': item['scrsItmsKcdNm'],
-                '주식일반배당금액': item['stckGenrDvdnAmt'],
-                '주식일반배당률': item['stckGenrDvdnRt'],
-                '주식결산월일': item['stckStacMd']
-            }
-            processed_data.append(processed_item)
+            # 현금배당일자를 날짜로 변환하여 20230101 이후인 데이터만 가공 및 추가
+            cash_dvdn_pay_date = item['cashDvdnPayDt']
+            
+            # cash_dvdn_pay_date 값이 비어있거나 올바른 날짜 형식이 아닌 경우 건너뛰기
+            if not cash_dvdn_pay_date or not cash_dvdn_pay_date.isdigit() or len(cash_dvdn_pay_date) != 8:
+                continue
+            
+            try:
+                cash_dvdn_pay_date = datetime.strptime(cash_dvdn_pay_date, '%Y%m%d')
+            except ValueError:
+                # 날짜 형식 변환 실패 시, 데이터 건너뛰기
+                continue
+                
+            # 주식일반배당금액이 0이 아니고 현금배당일자가 20230101 이후인 경우에만 데이터 가공 및 추가
+            if item['stckGenrDvdnAmt'] != '0' and cash_dvdn_pay_date >= datetime(2023, 1, 1):
+                processed_item = {
+                    '기준일자': item['basDt'],
+                    '법인등록번호': item['crno'],
+                    '주식발행회사명': item['stckIssuCmpyNm'],
+                    '현금배당일자': cash_dvdn_pay_date.strftime('%Y%m%d'),  # 다시 문자열로 변환
+                    'ISIN코드명': item['isinCdNm'],
+                    '주식배당사유': item['stckDvdnRcdNm'],
+                    '유가증권코드종류명': item['scrsItmsKcdNm'],
+                    '주식일반배당금액': item['stckGenrDvdnAmt'],
+                    '주식일반배당률': item['stckGenrDvdnRt'],
+                    '주식결산월일': item['stckStacMd']
+                }
+                processed_data.append(processed_item)
         
         return processed_data
     except KeyError:
         print("Invalid API response format.")
         return None
+
 
 def insert_data_to_mysql(data):
     # 가공 없이 데이터를 그대로 DataFrame으로 변환
