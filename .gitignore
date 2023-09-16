@@ -12,7 +12,6 @@ c/**/*.o
 c/**test*
 
 ## java
-
 java/*.class
 
 ## scala
@@ -35,7 +34,7 @@ python/secret.json
 **/secret.json
 python/**/node_modules
 python/**/package-lock.json
-
+secret.json
 ## mongodb
 mongodb/*.json
 mongodb/**/*.json
@@ -54,5 +53,8 @@ oracle/node/package-lock.json
 python/.DS_Store
 python/.DS_Store
 
-# secret.json
+.DS_Store
+docker-compose.yml
+node_modules
 secret.json
+

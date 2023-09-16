@@ -17,7 +17,7 @@ async def healthCheck():
 async def stock_data():
     return data.stock_data()
 
-@app.get('/get_all_data')
-async def get_all_data():
-    return data.get_all_data()
+@app.get('/get_db_data')
+async def get_db_data():
+    return data.get_db_data()
 

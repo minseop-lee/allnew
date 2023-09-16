@@ -52,7 +52,7 @@ def healthCheck():
 def stock_data():
     url = 'https://apis.data.go.kr/1160100/service/GetStocDiviInfoService/getDiviInfo'
     params = '?serviceKey=' + get_secret("data_apiKey")
-    params += '&pageNo=1&numOfRows=1000&resultType=json'
+    params += '&pageNo=1&numOfRows=100&resultType=json'
     url += params
     
     response = requests.get(url)
@@ -114,7 +114,7 @@ def main():
     else:
         print("Failed to fetch data from the API.")
 
-def get_all_data():
+def get_db_data():
     conn = engine.connect()
     metadata = MetaData()
     table_name = 'stock'
@@ -127,9 +127,6 @@ def get_all_data():
     data = [dict(zip(table.columns.keys(), result)) for result in results]
 
     return data
-
-
-
 
 if __name__ == "__main__":
     main()
